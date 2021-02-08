@@ -35,6 +35,9 @@ sudo npm install -g npm
 # sudo sh get-docker.sh
 sudo sh docker-set-up.sh
 
+# # docker-compose インストール用にセットアップ
+# echo "libffi-dev install  ----------------------------------"
+# sudo apt install libffi-dev -y
 
 # # bffi-devをインストールした後ならpip3でdocker-composeをインストールできる
 # echo "docker-compose  ----------------------------------"
