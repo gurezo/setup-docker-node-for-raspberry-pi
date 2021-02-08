@@ -14,6 +14,9 @@ sudo apt-get -y autoremove
 echo "apt-get -y autoclean ----------------------------------"
 sudo apt-get -y autoclean
 
+# Warning: apt-key output should not be parsed (stdout is not a terminal) 対策
+export APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1
+
 # curlコマンドがbashのシェルスクリプトを介して実行されない
 # https://is.gd/bSlbfa
 # curl コマンドは変数に入れて実行
@@ -32,8 +35,7 @@ echo "docker install  ----------------------------------"
 dockerInstallCmd=`curl -fsSL https://get.docker.com -o get-docker.sh`
 eval ${dockerInstallCmd}
 chmod 755 get-docker.sh
-./get-docker.sh
-# sudo sh docker-set-up.sh
+sudo ./get-docker.sh
 
 # docker-compose インストール用にセットアップ
 echo "libffi-dev install  ----------------------------------"
@@ -42,7 +44,6 @@ sudo apt install libffi-dev -y
 # bffi-devをインストールした後ならpip3でdocker-composeをインストールできる
 echo "docker-compose  ----------------------------------"
 sudo pip3 install docker-compose
-# sudo sh docker-compose-set-up.sh
 
 
 
