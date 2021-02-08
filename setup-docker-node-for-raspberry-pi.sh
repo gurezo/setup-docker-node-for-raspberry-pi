@@ -39,6 +39,7 @@ sudo sh docker-set-up.sh
 # # bffi-devをインストールした後ならpip3でdocker-composeをインストールできる
 # echo "docker-compose  ----------------------------------"
 # sudo pip3 install docker-compose
+sudo sh docker-compose-set-up.sh
 
 
 
