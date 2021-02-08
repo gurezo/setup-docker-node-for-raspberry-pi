@@ -26,23 +26,23 @@ eval ${nodeInstallCmd}
 sudo apt install nodejs -y
 sudo npm install -g npm
 
-# # curl コマンドは変数に入れて実行
-# # curl -fsSL https://get.docker.com -o get-docker.sh
-# echo "docker install  ----------------------------------"
-# dockerInstallCmd=`curl -fsSL https://get.docker.com -o get-docker.sh`
-# eval ${dockerInstallCmd}
-# chmod 755 get-docker.sh
-# sudo sh get-docker.sh
-sudo sh docker-set-up.sh
+# curl コマンドは変数に入れて実行
+# curl -fsSL https://get.docker.com -o get-docker.sh
+echo "docker install  ----------------------------------"
+dockerInstallCmd=`curl -fsSL https://get.docker.com -o get-docker.sh`
+eval ${dockerInstallCmd}
+chmod 755 get-docker.sh
+./get-docker.sh
+# sudo sh docker-set-up.sh
 
-# # docker-compose インストール用にセットアップ
-# echo "libffi-dev install  ----------------------------------"
-# sudo apt install libffi-dev -y
+# docker-compose インストール用にセットアップ
+echo "libffi-dev install  ----------------------------------"
+sudo apt install libffi-dev -y
 
-# # bffi-devをインストールした後ならpip3でdocker-composeをインストールできる
-# echo "docker-compose  ----------------------------------"
-# sudo pip3 install docker-compose
-sudo sh docker-compose-set-up.sh
+# bffi-devをインストールした後ならpip3でdocker-composeをインストールできる
+echo "docker-compose  ----------------------------------"
+sudo pip3 install docker-compose
+# sudo sh docker-compose-set-up.sh
 
 
 
