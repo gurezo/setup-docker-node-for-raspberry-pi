@@ -34,10 +34,6 @@ eval ${dockerInstallCmd}
 chmod 755 get-docker.sh
 sudo sh get-docker.sh
 
-# # docker-compose インストール用にセットアップ
-# echo "libffi-dev install  ----------------------------------"
-# sudo apt install libffi-dev -y
-
 # bffi-devをインストールした後ならpip3でdocker-composeをインストールできる
 echo "docker-compose  ----------------------------------"
 sudo pip3 install docker-compose
