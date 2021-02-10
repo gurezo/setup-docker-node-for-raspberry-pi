@@ -39,8 +39,12 @@ sudo sh get-docker.sh
 sudo usermod -aG docker `pi`
 sudo reboot
 
+echo "docker boot  ----------------------------------"
+# ここでグループを反映させるために再ログイン
+sudo systemctl status docker
+
 # docker-compose インストール用にセットアップ
-echo "libffi-dev install  ----------------------------------"
+echo "python3-pip install  ----------------------------------"
 sudo apt -y install python3-pip
 
 
