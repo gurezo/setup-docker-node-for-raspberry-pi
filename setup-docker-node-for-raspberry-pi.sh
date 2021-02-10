@@ -35,15 +35,18 @@ echo "docker install  ----------------------------------"
 dockerInstallCmd=`curl -fsSL https://get.docker.com -o get-docker.sh`
 eval ${dockerInstallCmd}
 chmod 755 get-docker.sh
-sudo ./get-docker.sh
+sudo sh get-docker.sh
+sudo usermod -aG docker `pi`
 
 # docker-compose インストール用にセットアップ
 echo "libffi-dev install  ----------------------------------"
-sudo apt install libffi-dev -y
+sudo apt -y install python3-pip
+
 
 # bffi-devをインストールした後ならpip3でdocker-composeをインストールできる
 echo "docker-compose  ----------------------------------"
-sudo pip3 install docker-compose
+pip3 install --upgrade pip
+sudo pip3 install -U docker-compose
 
 
 
