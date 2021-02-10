@@ -17,17 +17,17 @@ sudo apt-get -y autoclean
 # Warning: apt-key output should not be parsed (stdout is not a terminal) 対策
 export APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1
 
-# curlコマンドがbashのシェルスクリプトを介して実行されない
-# https://is.gd/bSlbfa
-# curl コマンドは変数に入れて実行
-# curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-# https://github.com/nodesource/distributions 参照
-echo "npm, node install  ----------------------------------"
-nodeVer=14
-nodeInstallCmd=`curl -sL https://deb.nodesource.com/setup_${nodeVer}.x | sudo -E bash -`
-eval ${nodeInstallCmd}
-sudo apt install nodejs -y
-sudo npm install -g npm
+# # curlコマンドがbashのシェルスクリプトを介して実行されない
+# # https://is.gd/bSlbfa
+# # curl コマンドは変数に入れて実行
+# # curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+# # https://github.com/nodesource/distributions 参照
+# echo "npm, node install  ----------------------------------"
+# nodeVer=14
+# nodeInstallCmd=`curl -sL https://deb.nodesource.com/setup_${nodeVer}.x | sudo -E bash -`
+# eval ${nodeInstallCmd}
+# sudo apt install nodejs -y
+# sudo npm install -g npm
 
 # curl コマンドは変数に入れて実行
 # curl -fsSL https://get.docker.com -o get-docker.sh
@@ -37,6 +37,7 @@ eval ${dockerInstallCmd}
 chmod 755 get-docker.sh
 sudo sh get-docker.sh
 sudo usermod -aG docker `pi`
+sudo reboot
 
 # docker-compose インストール用にセットアップ
 echo "libffi-dev install  ----------------------------------"
