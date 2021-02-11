@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -e -o pipefail
 
 echo "apt-get -y update ----------------------------------"
 sudo apt-get -y update
