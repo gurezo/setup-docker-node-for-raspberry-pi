@@ -21,4 +21,3 @@ export APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1
 echo "docker install  ----------------------------------"
 dockerInstallCmd=`curl -sSL https://get.docker.com | sh`
 eval ${dockerInstallCmd}
-sudo reboot
