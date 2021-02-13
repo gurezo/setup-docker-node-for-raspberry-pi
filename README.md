@@ -15,7 +15,7 @@ This is a shell repository that set up docker, docker-compose, node, npm for the
 ./docker-setup.sh
 ```
 ### note:
-- Even if E: Sub-process / usr / bin / dpkg returned an error code (1) occurs, the installation is complete.
+- Even if E: Sub-process / usr / bin / dpkg returned an error code (1) is output, restarting the Raspberry Pi OS will complete the Docker installation.
 
 ## docker install
 - excute fllowing shell
