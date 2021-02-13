@@ -3,7 +3,25 @@ This is a shell repository that set up docker, docker-compose, node, npm for the
 
 
 # How to Use
-1. 
+## node install
+- excute fllowing shell
+```
+./node.sh
+```
+
+## docker install
+- excute fllowing shell
+```
+./docker-setup.sh
+```
+### note:
+- Even if E: Sub-process / usr / bin / dpkg returned an error code (1) occurs, the installation is complete.
+
+## docker install
+- excute fllowing shell
+```
+./docker-compose-setup.sh
+```
 
 # Verification Hardware
 - Raspberry Pi 4 Model B/4GB
