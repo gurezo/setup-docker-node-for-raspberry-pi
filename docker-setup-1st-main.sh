@@ -1,11 +1,10 @@
 #!/bin/bash
 set -e
 
+sh docker-setup-1st.sh
 
 # コマンドの返り値が非ゼロのときハンドラを実行するように指定する
 trap error ERR
-
-sh docker-setup-1st.sh
 
 exit 0;
 
