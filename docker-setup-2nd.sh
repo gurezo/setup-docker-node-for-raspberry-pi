@@ -8,6 +8,9 @@ set -e
 echo "docker usermod  ----------------------------------"
 sudo usermod -aG docker pi
 
+echo "Docker status check  ----------------------------------"
+sudo docker ps
+
 echo "systemctl status docker  ----------------------------------"
 # ここでグループを反映させるために再ログイン
 # sudo systemctl status docker

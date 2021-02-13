@@ -1,5 +1,8 @@
 #!/bin/bash
-set -e -o pipefail
+set -e
+
+# コマンドの返り値が非ゼロのときハンドラを実行するように指定する
+trap error ERR
 
 echo "apt-get -y update ----------------------------------"
 sudo apt-get -y update
@@ -27,18 +30,12 @@ function error() {
   echo "E: Sub-process /usr/bin/dpkg returned an error code (1) occured!!!" >&2
   echo "but Docker install OK Raspberry Pi reboot"
 
-  echo "Docker status check"
-  docker ps
-
   sudo reboot
   exit 1;
 
   # スクリプトを終了する
   exit 1
 }
-
-# コマンドの返り値が非ゼロのときハンドラを実行するように指定する
-trap error ERR
 
 # 例として非ゼロを返すコマンドを実行する
 false
