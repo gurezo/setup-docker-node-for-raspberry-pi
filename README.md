@@ -37,10 +37,13 @@ Linux raspberrypi 5.10.11-v8+ #1399 SMP PREEMPT Thu Jan 28 12:14:03 GMT 2021 aar
 
 pi@raspberrypi:~ $ npm -v
 7.5.4
+
 pi@raspberrypi:~ $ node -v
 v12.20.2
+
 pi@raspberrypi:~ $ docker --version
 Docker version 20.10.3, build 48d30b5
+
 pi@raspberrypi:~ $ docker-compose --version
 docker-compose version 1.28.2, build 67630359
 ```
