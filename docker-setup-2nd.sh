@@ -10,7 +10,7 @@ sudo usermod -aG docker pi
 
 echo "systemctl status docker  ----------------------------------"
 # ここでグループを反映させるために再ログイン
-sudo systemctl status docker
+# sudo systemctl status docker
 
 sudo reboot
 

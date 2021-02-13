@@ -22,8 +22,23 @@ echo "docker install  ----------------------------------"
 dockerInstallCmd=`curl -sSL https://get.docker.com | sh`
 eval ${dockerInstallCmd}
 
-if [ -e ]; then
-  echo "raspberry pi reboot"
+function error() {
+  # 何か起きたことを標準エラー出力に書く
+  echo "E: Sub-process /usr/bin/dpkg returned an error code (1) occured!!!" >&2
+  echo "but Docker install OK Raspberry Pi reboot"
+
+  echo "Docker status check"
+  docker ps
+
   sudo reboot
   exit 1;
-fi
+
+  # スクリプトを終了する
+  exit 1
+}
+
+# コマンドの返り値が非ゼロのときハンドラを実行するように指定する
+trap error ERR
+
+# 例として非ゼロを返すコマンドを実行する
+false
