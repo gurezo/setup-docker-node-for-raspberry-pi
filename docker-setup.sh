@@ -27,19 +27,7 @@ eval ${dockerInstallCmd}
 echo "if E: Sub-process /usr/bin/dpkg returned an error code (1) occured"
 echo "but Docker install OK Raspberry Pi reboot"
 
+echo "docker usermod  ----------------------------------"
+sudo usermod -aG docker pi
+
 sudo reboot
-
-# function error() {
-#   # 何か起きたことを標準エラー出力に書く
-#   echo "E: Sub-process /usr/bin/dpkg returned an error code (1) occured!!!" >&2
-#   echo "but Docker install OK Raspberry Pi reboot"
-
-#   sudo reboot
-#   exit 1;
-
-#   # スクリプトを終了する
-#   exit 1
-# }
-
-# # 例として非ゼロを返すコマンドを実行する
-# false
