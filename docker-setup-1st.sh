@@ -1,8 +1,7 @@
 #!/bin/bash
-set -e
 
-# コマンドの返り値が非ゼロのときハンドラを実行するように指定する
-trap error ERR
+# # コマンドの返り値が非ゼロのときハンドラを実行するように指定する
+# trap error ERR
 
 echo "apt-get -y update ----------------------------------"
 sudo apt-get -y update
@@ -24,6 +23,11 @@ export APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1
 echo "docker install  ----------------------------------"
 dockerInstallCmd=`curl -sSL https://get.docker.com | sh`
 eval ${dockerInstallCmd}
+
+echo "if E: Sub-process /usr/bin/dpkg returned an error code (1) occured"
+echo "but Docker install OK Raspberry Pi reboot"
+
+sudo reboot
 
 # function error() {
 #   # 何か起きたことを標準エラー出力に書く
