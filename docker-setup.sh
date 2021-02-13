@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# # コマンドの返り値が非ゼロのときハンドラを実行するように指定する
-# trap error ERR
-
 echo "apt-get -y update ----------------------------------"
 sudo apt-get -y update
 
@@ -30,4 +27,5 @@ echo "but Docker install OK Raspberry Pi reboot"
 echo "docker usermod  ----------------------------------"
 sudo usermod -aG docker pi
 
+echo "reboot now  ----------------------------------"
 sudo reboot
