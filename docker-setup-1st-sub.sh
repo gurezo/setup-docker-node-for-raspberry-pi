@@ -25,17 +25,17 @@ echo "docker install  ----------------------------------"
 dockerInstallCmd=`curl -sSL https://get.docker.com | sh`
 eval ${dockerInstallCmd}
 
-function error() {
-  # 何か起きたことを標準エラー出力に書く
-  echo "E: Sub-process /usr/bin/dpkg returned an error code (1) occured!!!" >&2
-  echo "but Docker install OK Raspberry Pi reboot"
+# function error() {
+#   # 何か起きたことを標準エラー出力に書く
+#   echo "E: Sub-process /usr/bin/dpkg returned an error code (1) occured!!!" >&2
+#   echo "but Docker install OK Raspberry Pi reboot"
 
-  sudo reboot
-  exit 1;
+#   sudo reboot
+#   exit 1;
 
-  # スクリプトを終了する
-  exit 1
-}
+#   # スクリプトを終了する
+#   exit 1
+# }
 
-# 例として非ゼロを返すコマンドを実行する
-false
+# # 例として非ゼロを返すコマンドを実行する
+# false
