@@ -18,5 +18,7 @@ trap error ERR
 
 sh docker-setup-1st.sh
 
+exit 0;
+
 # 例として非ゼロを返すコマンドを実行する
 false
