@@ -1,35 +1,37 @@
 #!/bin/bash
 
-echo "apt-get -y update ----------------------------------"
-sudo apt-get -y update
+echo "apt update ----------------------------------"
+sudo apt update
 
-echo "apt-get -y upgrade ----------------------------------"
-sudo apt-get -y upgrade
+echo "apt upgrade ----------------------------------"
+sudo apt upgrade -y
 
-echo "apt-get -y autoremove ----------------------------------"
-sudo apt-get -y autoremove
+echo "apt autoremove ----------------------------------"
+sudo apt autoremove -y
 
-echo "apt-get -y autoclean ----------------------------------"
-sudo apt-get -y autoclean
+echo "apt autoclean ----------------------------------"
+sudo apt autoclean
 
 # Warning: apt-key output should not be parsed (stdout is not a terminal) 対策
 export APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1
 
-# curl コマンドは変数に入れて実行
-# curl -fsSL https://get.docker.com -o get-docker.sh
+# Dockerインストール
 echo "docker install  ----------------------------------"
-dockerInstallCmd=`curl -sSL https://get.docker.com | sh`
-eval ${dockerInstallCmd}
+curl -fsSL https://get.docker.com | sudo sh
 
-# Even if E: Sub-process / usr / bin / dpkg returned an error code (1) occurs, 
+# Even if E: Sub-process / usr / bin / dpkg returned an error code (1) occurs,
 # the installation is complete.
 echo "if E: Sub-process /usr/bin/dpkg returned an error code (1) occured"
-echo "but Docker install OK Raspberry Pi reboot"
+echo "but Docker install OK. Please logout and login again or reboot Raspberry Pi"
 
 # user group add
 echo "docker usermod  ----------------------------------"
-sudo usermod -aG docker pi
+sudo usermod -aG docker $USER
 
-# Reboot to complete docker installation
-echo "reboot now  ----------------------------------"
-sudo reboot
+# グループ変更を適用
+echo "newgrp docker  ----------------------------------"
+newgrp docker
+
+# インストール確認
+echo "docker version check  ----------------------------------"
+docker --version
